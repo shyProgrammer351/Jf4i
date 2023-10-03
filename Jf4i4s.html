@@ -1,0 +1,155 @@
+<!DOCTYPE html> <html> 	<head> 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 		<script type="text/javascript" src="https://5awf1ssnauwzzo5wgvczig.on.drv.tw/Web/J/J0404.js"></script> 		<script type="text/javascript" src="../reading/functions.js"></script> 		<link rel="stylesheet" href="../reading/layout.css"> 		<script> 			var d10 = "M1 M9 M3 D1 D2 G1 G2 D3 M2 M5 G3 G5 G19 E001 G20 G4 G7 G10 G12 E002 G11 G13 G21 G22 G14 G15 G18 G6 G9 G23 G24 G26 G27 G8 M4 M6 M7 M5 G3 G5 G19 E003 G20 G4 G7 G10 G12 E004 G11 G13 G21 G22 G14 G15 G18 G6 G9 G23 G24 G26 G27 G8 M4 M6 M7 M5 G3 G5 G19 E005 G20 G4 G7 G10 G12 E006 G11 G13 G21 G22 G14 G16 G17 G18 G6 G9 G23 G24 G25 G8 M4 M6 M8"; 		</script> 	</head> 	<body onload='f1();' onkeydown='f4()' oncontextmenu="return false" oncut="return false" onpaste="return false" draggable="false" ondragstart="return false" ondrop="return false"> 		<div id = "container"> 			<div id = "titleBox"> 			</div> 			<div id = "navigationBox"> 			</div>  			<div id = "contentBox"> 				<h4>문제</h4> 				<pre style='white-space:normal;'>컵 3개 중 하나에 임의로 폭탄을 숨기고 참여자에게 컵 번호를 입력받아 폭탄을 피하는 문제입니다 실행순서를 클릭하세요 </pre> 				<pre class='selectable'>1, 2, 3 중에서 폭탄[●]이 있는 상자를 피하세요 : <b><font color='red'>1</font></b>
+  ___    ___    ___  
+ |   |  |   |  |   | 
+ |   |  |   |  |   | 
+                 ●   
+  휴우!               
+1, 2, 3 중에서 폭탄[●]이 있는 상자를 피하세요 : <b><font color='red'>0</font></b>
+게임을 종료합니다. 다음에 또 만나요!
+</pre><br>  	 				<h4>프로그램 코드</h4> 				<pre>
+<pre id="codeE001" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('E001')">E001		<font color="green">// 폭탄을 임의로 컵3번(2)에 숨겼다고 가정</font>   
+</pre><pre id="codeE002" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('E002')">E002		<font color="green">// [참여자]가 컵2번(1)을 선택</font>
+</pre><pre id="codeE003" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('E003')">E003		<font color="green">// 폭탄을 임의로 컵1번(0)에 숨겼다고 가정</font>
+</pre><pre id="codeE004" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('E004')">E004		<font color="green">// [참여자]가 컵1번(0)을 선택</font>
+</pre><pre id="codeE005" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('E005')">E005		<font color="green">// 폭탄을 임의로 컵2번(1)에 숨겼다고 가정</font>
+</pre><pre id="codeE006" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('E006')">E006		<font color="green">// [참여자]가 컵0번(GAME_OVER)을 선택</font>
+</pre><pre id="code0" class="unselectable codeClass">			
+
+</pre><pre id="code0" class="unselectable codeClass">	import java.util.Scanner;
+</pre><pre id="code0" class="unselectable codeClass">	import threeCupGame.BombDodgeGame;
+
+</pre><pre id="code0" class="unselectable codeClass">	public class BombDodgeGame_Main					 
+</pre><pre id="code0" class="unselectable codeClass">	{
+</pre><pre id="codeM1" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('M1')">M1		public static void main(String[] args) 
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="codeM9" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('M9')">M9			Scanner scan = new Scanner( System.in );
+</pre><pre id="codeM2" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('M2')">M2			BombDodgeGame game =
+</pre><pre id="codeM3" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('M3')">M3			                      new BombDodgeGame();
+</pre><pre id="code0" class="unselectable codeClass">				
+</pre><pre id="code0" class="unselectable codeClass">			for( String result = null; 
+</pre><pre id="codeM4" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('M4')">M4			                          ( result = 
+</pre><pre id="codeM5" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('M5')">M5			                                       game.play( scan )
+</pre><pre id="codeM6" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('M6')">M6			                                                         ) != null; )
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="codeM7" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('M7')">M7				System.out.println( result ); 
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="codeM8" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('M8')">M8			System.out.println( "\n게임을 종료합니다. 다음에 또 만나요!" ); 
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">	}
+
+</pre><pre id="code0" class="unselectable codeClass">	package threeCupGame;
+</pre><pre id="code0" class="unselectable codeClass">	import java.util.Scanner;
+
+</pre><pre id="code0" class="unselectable codeClass">	class ThreeCupGame							
+</pre><pre id="code0" class="unselectable codeClass">	{
+</pre><pre id="code0" class="unselectable codeClass">		public final int GAME_OVER = -1;	
+
+</pre><pre id="code0" class="unselectable codeClass">		private String strCups;						
+</pre><pre id="code0" class="unselectable codeClass">		private String strBall;						
+</pre><pre id="code0" class="unselectable codeClass">		private String strBlanks;				
+</pre><pre id="code0" class="unselectable codeClass">		
+</pre><pre id="code0" class="unselectable codeClass">		protected String strMeet;				
+</pre><pre id="code0" class="unselectable codeClass">		protected String strDodge;			
+</pre><pre id="code0" class="unselectable codeClass">		protected String message;		
+
+</pre><pre id="codeG1" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G1')">G1		public ThreeCupGame() 	
+</pre><pre id="code0" class="unselectable codeClass">		{		
+</pre><pre id="code0" class="unselectable codeClass">			this.strCups   = "  ___    ___    ___  \n"		
+</pre><pre id="code0" class="unselectable codeClass">					           + " |   |  |   |  |   | \n"
+</pre><pre id="code0" class="unselectable codeClass">					           + " |   |  |   |  |   | \n";
+</pre><pre id="code0" class="unselectable codeClass">			this.strBall   = "   ●   ";										
+</pre><pre id="code0" class="unselectable codeClass">			this.strBlanks = "       ";										
+</pre><pre id="code0" class="unselectable codeClass">			this.strMeet   = " 찾았다! ";										
+</pre><pre id="code0" class="unselectable codeClass">			this.strDodge  = " 놓쳤다! ";										
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code0" class="unselectable codeClass">			this.message = " 1, 2, 3 중에서 구슬[●]을 숨긴 컵을 찾으세요 : ";	
+</pre><pre id="codeG2" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G2')">G2		} 
+
+</pre><pre id="codeG3" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G3')">G3		public String play( Scanner scan )			 
+</pre><pre id="code0" class="unselectable codeClass">		{	
+</pre><pre id="codeG4" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G4')">G4			int ball = 
+</pre><pre id="codeG5" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G5')">G5			           getRandomCup();
+</pre><pre id="codeG6" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G6')">G6			int player = 
+</pre><pre id="codeG7" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G7')">G7			             selectCup( scan );
+</pre><pre id="codeG8" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G8')">G8			return  
+</pre><pre id="codeG9" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G9')">G9			       getResult( player, ball );
+</pre><pre id="code0" class="unselectable codeClass">		}
+
+</pre><pre id="codeG10" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G10')">G10		private int selectCup( Scanner scan )
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code0" class="unselectable codeClass">			int player = 0;
+</pre><pre id="code0" class="unselectable codeClass">			try
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				System.out.print( message );
+</pre><pre id="codeG11" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G11')">G11				player = 
+</pre><pre id="codeG12" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G12')">G12				         scan.nextInt();
+</pre><pre id="codeG13" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G13')">G13				if ( isPossibleValue( player - 1 ) 
+</pre><pre id="codeG14" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G14')">G14				                                   == true )
+</pre><pre id="codeG15" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G15')">G15					player = player - 1;
+</pre><pre id="codeG16" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G16')">G16				else
+</pre><pre id="codeG17" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G17')">G17					player = GAME_OVER;
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			catch( Exception e )
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				e.printStackTrace();
+</pre><pre id="code0" class="unselectable codeClass">			}
+
+</pre><pre id="codeG18" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G18')">G18			return player;
+</pre><pre id="code0" class="unselectable codeClass">		}
+
+</pre><pre id="codeG19" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G19')">G19		public int getRandomCup() 
+</pre><pre id="code0" class="unselectable codeClass">		{ 
+</pre><pre id="code0" class="unselectable codeClass">			return (int)( Math.random() * 3 );
+</pre><pre id="codeG20" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G20')">G20		}
+</pre><pre id="code0" class="unselectable codeClass">		
+</pre><pre id="codeG21" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G21')">G21		public boolean isPossibleValue( int selection )
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code0" class="unselectable codeClass">			return ( 0 <= selection ) && ( selection <= 2 );		
+</pre><pre id="codeG22" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G22')">G22		}
+
+</pre><pre id="code0" class="unselectable codeClass">	
+</pre><pre id="codeG23" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G23')">G23		private String getResult( int player, int ball ) 
+</pre><pre id="code0" class="unselectable codeClass">		{ 
+</pre><pre id="codeG24" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G24')">G24			if ( player == GAME_OVER )
+</pre><pre id="codeG25" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G25')">G25				return null;
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="codeG26" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G26')">G26			String str = strCups;
+</pre><pre id="code0" class="unselectable codeClass">			for ( int i = 0; i < 3; i++ )
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				if ( ball == i ) 
+</pre><pre id="code0" class="unselectable codeClass">					str += strBall;
+</pre><pre id="code0" class="unselectable codeClass">				else
+</pre><pre id="code0" class="unselectable codeClass">					str += strBlanks;
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code0" class="unselectable codeClass">			str += "\n";
+</pre><pre id="code0" class="unselectable codeClass">			for ( int i = 0; i < 3; i++ )
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				if ( ( player == i ) && ( player == ball ) )
+</pre><pre id="code0" class="unselectable codeClass">					str += strMeet;
+</pre><pre id="code0" class="unselectable codeClass">				else if ( player == i )
+</pre><pre id="code0" class="unselectable codeClass">					str += strDodge;
+</pre><pre id="code0" class="unselectable codeClass">				else
+</pre><pre id="code0" class="unselectable codeClass">					str += strBlanks;
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="codeG27" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('G27')">G27			return str;
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">	}
+
+</pre><pre id="code0" class="unselectable codeClass">
+</pre><pre id="code0" class="unselectable codeClass">	package threeCupGame;
+
+</pre><pre id="code0" class="unselectable codeClass">	public class BombDodgeGame extends ThreeCupGame 
+</pre><pre id="code0" class="unselectable codeClass">	{
+</pre><pre id="codeD1" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('D1')">D1		public BombDodgeGame() 
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="codeD2" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('D2')">D2			super(); 
+</pre><pre id="code0" class="unselectable codeClass">			super.message = " 1, 2, 3 중에서 폭탄[●]이 있는 상자를 피하세요 : ";		
+</pre><pre id="code0" class="unselectable codeClass">			super.strMeet   = "  펑!!  ";		
+</pre><pre id="code0" class="unselectable codeClass">			super.strDodge  = "  휴우! ";		
+</pre><pre id="codeD3" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('D3')">D3		}
+</pre><pre id="code0" class="unselectable codeClass">	}
+</pre>
+</pre> 			</div> 			<div id = "floatingBox"> 				<b>실행 순서</b> 				<pre id = "d4" style='white-space:normal; word-wrap:break-word; width:150px;'></pre> 			</div> 		</div> 	</body> </html>   

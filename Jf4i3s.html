@@ -1,0 +1,178 @@
+<!DOCTYPE html> <html> 	<head> 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 		<script type="text/javascript" src="https://5awf1ssnauwzzo5wgvczig.on.drv.tw/Web/J/J0403.js"></script> 		<script type="text/javascript" src="../reading/functions.js"></script> 		<link rel="stylesheet" href="../reading/layout.css"> 		<script> 			var d10 = "32 33 35 40 41 1 2 42 34 37 3 5 26 27 4 7 28 29 6 9 18 19 21 43 45 30 31 44 46 20 22 8 10 36 38 39"; 		</script> 	</head> 	<body onload='f1();' onkeydown='f4()' oncontextmenu="return false" oncut="return false" onpaste="return false" draggable="false" ondragstart="return false" ondrop="return false"> 		<div id = "container"> 			<div id = "titleBox"> 			</div> 			<div id = "navigationBox"> 			</div>  			<div id = "contentBox"> 				<h4>문제</h4> 				<pre style='white-space:normal;'>A양이 가위바위보를 선택하면 B군이 임의로 가위바위보를 선택하고 지는 가위바위보의 승패를 출력하는 문제입니다 실행순서를 클릭하세요 </pre> 				<pre class='selectable'>가위, 바위, 보 중 하나를 입력하세요 : <b><font color='red'>가위</font></b>
+플레이어 A는 가위를 냈습니다.
+플레이어 B는 보를 냈습니다.
+판정결과는 플레이어 B가 이겼습니다
+</pre><br>  	 				<h4>프로그램 코드</h4> 				<pre>
+</pre><pre id="code0" class="unselectable codeClass">	package rockPaperScissors;
+</pre><pre id="code0" class="unselectable codeClass">	import java.util.Scanner;
+
+</pre><pre id="code0" class="unselectable codeClass">	public class RockPaperScissors	 
+</pre><pre id="code0" class="unselectable codeClass">	{
+</pre><pre id="code0" class="unselectable codeClass">		public final int ROCK = 0; 
+</pre><pre id="code0" class="unselectable codeClass">		public final int PAPER = 1;		 
+</pre><pre id="code0" class="unselectable codeClass">		public final int SCISSORS = 2;	 
+
+</pre><pre id="code0" class="unselectable codeClass">		private String playerA;		 
+</pre><pre id="code0" class="unselectable codeClass">		private String playerB; 
+
+</pre><pre id="code1" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('1')">1		public RockPaperScissors()	 
+</pre><pre id="code0" class="unselectable codeClass">		{	
+</pre><pre id="code0" class="unselectable codeClass">			this.playerA = "가위";	 
+</pre><pre id="code2" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('2')">2			this.playerB = "바위";	 
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">		
+</pre><pre id="code3" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('3')">3		public String play( Scanner scan )	 
+</pre><pre id="code0" class="unselectable codeClass">		{	
+</pre><pre id="code4" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('4')">4			this.playerA = 		 
+</pre><pre id="code5" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('5')">5			               getRockPaperScissors( scan ); 
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code6" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('6')">6			this.playerB = 				 
+</pre><pre id="code7" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('7')">7			               getRockPaperScissors();				 
+
+</pre><pre id="code8" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('8')">8			String result = 
+</pre><pre id="code9" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('9')">9			               getResult( this.playerA, this.playerB );		 
+
+</pre><pre id="code10" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('10')">10			return result;
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">		
+</pre><pre id="code11" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('11')">11		public String play( String playerA )	 
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code12" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('12')">12			this.playerA = playerA;		 
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code13" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('13')">13			this.playerB = 				 
+</pre><pre id="code14" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('14')">14			               getRockPaperScissors();	
+
+</pre><pre id="code15" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('15')">15			String result = 
+</pre><pre id="code16" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('16')">16			               getResult( this.playerA, this.playerB );			 
+
+</pre><pre id="code17" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('17')">17			return result;
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">		
+</pre><pre id="code18" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('18')">18		private String getResult( String playerA, String playerB )	 
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code0" class="unselectable codeClass">			String result = "";
+</pre><pre id="code0" class="unselectable codeClass">			result += "플레이어 A는 " + playerA +"를 냈습니다.\n";
+</pre><pre id="code19" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('19')">19			result += "플레이어 B는 " + playerB +"를 냈습니다.\n";
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code20" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('20')">20			result += "판정결과는 " 
+</pre><pre id="code21" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('21')">21			                  + judge( playerA, playerB ) + "\n";  
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code22" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('22')">22			return result;
+</pre><pre id="code0" class="unselectable codeClass">		}
+
+</pre><pre id="code23" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('23')">23		private String getResult() 
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code24" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('24')">24			return
+</pre><pre id="code25" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('25')">25			       getResult( this.playerA, this.playerB );		 
+</pre><pre id="code0" class="unselectable codeClass">		}
+
+</pre><pre id="code26" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('26')">26		private String getRockPaperScissors( Scanner scan ) 
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code0" class="unselectable codeClass">			String result = "";
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code0" class="unselectable codeClass">			do
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				System.out.print( "가위, 바위, 보 중 하나를 입력하세요 : ");
+</pre><pre id="code0" class="unselectable codeClass">				result = scan.next();
+</pre><pre id="code0" class="unselectable codeClass">				
+</pre><pre id="code0" class="unselectable codeClass">			} while( !result.equals( "가위" ) && !result.equals( "바위" ) && !result.equals( "보" ) );
+</pre><pre id="code0" class="unselectable codeClass">				
+</pre><pre id="code27" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('27')">27			return result;
+</pre><pre id="code0" class="unselectable codeClass">		}
+
+</pre><pre id="code28" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('28')">28		private String getRockPaperScissors()			 
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code0" class="unselectable codeClass">			int num = (int)(Math.random()*3);
+</pre><pre id="code0" class="unselectable codeClass">			String result = "";
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code0" class="unselectable codeClass">			if ( num == SCISSORS )
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				result = "가위";
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			else if ( num == ROCK )
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				result = "바위";
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			else
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				result = "보"; 
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code29" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('29')">29			return result; 
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">				
+</pre><pre id="code30" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('30')">30		protected String judge( String playerA, String playerB )	 
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code0" class="unselectable codeClass">			String result = "";
+</pre><pre id="code0" class="unselectable codeClass">			if ( playerA.equals( playerB ) )
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				result = "플레이어 A와 플레이어 B가 비겼습니다";
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			else if ( ( playerA.equals( "가위" ) && playerB.equals( "보" ) ) 
+</pre><pre id="code0" class="unselectable codeClass">					|| ( playerA.equals( "바위" ) && playerB.equals( "가위" ) )
+</pre><pre id="code0" class="unselectable codeClass">					|| ( playerA.equals( "보" ) && playerB.equals( "바위" ) ) )
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				result = "플레이어 A가 이겼습니다";
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			else
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				result = "플레이어 B가 이겼습니다";
+</pre><pre id="code0" class="unselectable codeClass">			}	
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code31" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('31')">31			return result;
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">	}
+
+</pre><pre id="code0" class="unselectable codeClass">
+
+</pre><pre id="code0" class="unselectable codeClass">	import java.util.Scanner;
+</pre><pre id="code0" class="unselectable codeClass">	import rockPaperScissors.RockPaperScissors_Lose;
+
+</pre><pre id="code0" class="unselectable codeClass">	public class RockPaperScissors_Lose_Main							 
+</pre><pre id="code0" class="unselectable codeClass">	{
+</pre><pre id="code32" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('32')">32		public static void main(String[] args) 	 
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code33" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('33')">33			Scanner scan = new Scanner( System.in );	
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code34" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('34')">34			RockPaperScissors_Lose game = 
+</pre><pre id="code35" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('35')">35			                         new RockPaperScissors_Lose();
+
+</pre><pre id="code36" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('36')">36			String result = 
+</pre><pre id="code37" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('37')">37			                game.play( scan );
+</pre><pre id="code0" class="unselectable codeClass">			        
+</pre><pre id="code38" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('38')">38			System.out.println( result );
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code39" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('39')">39			return;
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">	}
+
+</pre><pre id="code0" class="unselectable codeClass">	package rockPaperScissors;
+
+</pre><pre id="code0" class="unselectable codeClass">	public class RockPaperScissors_Lose extends RockPaperScissors 
+</pre><pre id="code0" class="unselectable codeClass">	{
+</pre><pre id="code40" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('40')">40		public RockPaperScissors_Lose()		 
+</pre><pre id="code0" class="unselectable codeClass">		{	
+</pre><pre id="code41" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('41')">41			super();					 
+</pre><pre id="code42" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('42')">42		}
+
+</pre><pre id="code43" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('43')">43		protected String judge( String playerA, String playerB )	
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code44" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('44')">44			String result = 
+</pre><pre id="code45" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('45')">45			                super.judge( playerA, playerB ); 
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code0" class="unselectable codeClass">			if ( result.equals( "플레이어 A가 이겼습니다" ) )
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				return "플레이어 B가 이겼습니다";
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			else if ( result.equals( "플레이어 B가 이겼습니다" ) )
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				return "플레이어 A가 이겼습니다";
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			else
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				return result;
+</pre><pre id="code0" class="unselectable codeClass">			}	
+</pre><pre id="code46" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('46')">46		}
+</pre><pre id="code0" class="unselectable codeClass">	}
+</pre>
+</pre> 			</div> 			<div id = "floatingBox"> 				<b>실행 순서</b> 				<pre id = "d4" style='white-space:normal; word-wrap:break-word; width:150px;'></pre> 			</div> 		</div> 	</body> </html>   

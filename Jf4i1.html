@@ -1,0 +1,130 @@
+<!DOCTYPE html> <html> 	<head> 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!--		<s-c-r-i-p-t a-s-y-n-c s-r-c="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7250753558435816" crossorigin="anonymous"></script> --> <!--		<s-c-r-i-p-t type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script> -->		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script> 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> 		<script type="text/javascript" src="https://5awf1ssnauwzzo5wgvczig.on.drv.tw/Web/J/J0401.js"></script> 		<script type="text/javascript" src="../reading/functions.js"></script> 		<link rel="stylesheet" href="../reading/layout.css"> 	</head> 	<body onload='f2();' onkeydown='f4()' oncontextmenu="return false" onselectstart="return false" oncopy="return false" oncut="return false" onpaste="return false" draggable="false" ondragstart="return false" ondrop="return false"> 		<div id = "container"> 			<div id = "titleBox"></div> 			<div id = "navigationBox"></div>  			<div id = "contentBox"> 				<h4>문제</h4> 				<pre style='white-space:normal;'>점을 클래스로 표현하는 문제입니다 이를 해결하는 다음 프로그램을 해석하세요 </pre> 				<pre class='selectable'>점의 x좌표 값을 입력하세요 : <b><font color='red'>3</font></b>
+점의 y좌표 값을 입력하세요 : <b><font color='red'>4</font></b>
+(0,0)과 (3,4) 사이의 거리는 5.0입니다
+</pre><br><pre class='selectable'>이 점은 원점입니다
+</pre><br><pre class='selectable'>점의 x좌표 값을 입력하세요 : <b><font color='red'>6</font></b>
+점의 y좌표 값을 입력하세요 : <b><font color='red'>8</font></b>
+(0,0)과 (6,8) 사이의 거리는 10.0입니다
+</pre><br> 	  				<h4>알고리즘</h4> 				<pre style='white-space:normal;'>프로그램시작 <br>&nbsp; &nbsp;점의 좌표값 입력 <br>&nbsp; &nbsp;좌표값을 바탕으로 원점과 입력점의 객체 초기화 <br>&nbsp; &nbsp;원점과 입력한 점과 까지의 거리 계산 <br>프로그램 종료 <br></pre> 		 				<br><h4>프로그램 코드 <input id='btn' type='button' value='실행순서 및 메모리상태 확인' onclick='f5();'/></h4>  				<div id = "codeBox"><pre id="code0" class="unselectable codeClass">	<font color="green">// 파일명 : ./Chapter04/XYpoint_Main.java</font> 
+</pre><pre id="code0" class="unselectable codeClass">	import java.util.Scanner; 
+</pre><pre id="code0" class="unselectable codeClass">	import java.lang.<font color='red' title="수학과 관련된 다양한 메서드를 제공해주는 클래스">Math</font>;  
+</pre><pre id="code0" class="unselectable codeClass">	 
+</pre><pre id="code0" class="unselectable codeClass">	<font color="green">/** </font>
+</pre><pre id="code0" class="unselectable codeClass">	 <font color="green">* XYpoint 클래스는 점을 모델링</font>  
+</pre><pre id="code0" class="unselectable codeClass">	 <font color="green">* @author 박소영</font> 
+</pre><pre id="code0" class="unselectable codeClass">	 <font color="green">*</font> 
+</pre><pre id="code0" class="unselectable codeClass">	 <font color="green">*/</font> 
+</pre><pre id="code0" class="unselectable codeClass">	class XYpoint  
+</pre><pre id="code0" class="unselectable codeClass">	{ 
+</pre><pre id="code0" class="unselectable codeClass">		<font color="green">/** </font>
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">* 점의 x좌표 값</font> 
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">*/</font> 
+</pre><pre id="code0" class="unselectable codeClass">		private int x; 
+</pre><pre id="code0" class="unselectable codeClass">		<font color="green">/** </font>
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">* 점의 y좌표 값</font> 
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">*/</font> 
+</pre><pre id="code0" class="unselectable codeClass">		private int y; 
+</pre><pre id="code0" class="unselectable codeClass">		 
+</pre><pre id="code0" class="unselectable codeClass">		<font color="green">/** </font>
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">* XYpoint 생성자로 점 좌표 초기화</font> 
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">*/</font> 
+</pre>
+<pre id="codeP1b" class="unselectable codeClass">P1b		public XYpoint( int x, int y )									 
+</pre><pre id="code0" class="unselectable codeClass">		{ 
+</pre><pre id="code0" class="unselectable codeClass">			<font color='red' title="객체 자신에 대한 레퍼런스">this</font>.x = x;						 
+</pre><pre id="code0" class="unselectable codeClass">			<font color='red' title="객체 자신에 대한 레퍼런스">this</font>.y = y;						 
+</pre>
+<pre id="codeP1e" class="unselectable codeClass">P1e		} 
+</pre><pre id="code0" class="unselectable codeClass">		 
+</pre><pre id="code0" class="unselectable codeClass">		<font color="green">/** </font>
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">* XYpoint 생성자로 원점 초기화</font> 
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">*/</font> 
+</pre>
+<pre id="codeP2b" class="unselectable codeClass">P2b		public XYpoint()									 
+</pre><pre id="code0" class="unselectable codeClass">		{ 
+</pre>
+<pre id="codeP21" class="unselectable codeClass">P21			<font color='red' title="객체 자신에 대한 레퍼런스">this</font>( 0, 0 );						 
+</pre>
+<pre id="codeP2e" class="unselectable codeClass">P2e		} 
+</pre><pre id="code0" class="unselectable codeClass">	 
+</pre><pre id="code0" class="unselectable codeClass">		<font color="green">/** </font>
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">* 점과 다른 점의 좌표값을 비교</font> 
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">* @return 두 점의 좌표가 일치하면 true, 아니면 false</font>  
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">*/</font> 
+</pre>
+<pre id="codeP3b" class="unselectable codeClass">P3b		public boolean <font color='red' title="해당 객체와 전달받은 객체가 같은지 판정하는 메서드">equals</font>( XYpoint that )					 
+</pre><pre id="code0" class="unselectable codeClass">		{ 
+</pre><pre id="code0" class="unselectable codeClass">			return ( <font color='red' title="객체 자신에 대한 레퍼런스">this</font>.x == that.x) && ( <font color='red' title="객체 자신에 대한 레퍼런스">this</font>.y == that.y ); 
+</pre>
+<pre id="codeP3e" class="unselectable codeClass">P3e		} 
+</pre><pre id="code0" class="unselectable codeClass">	 
+</pre><pre id="code0" class="unselectable codeClass">		<font color="green">/** </font>
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">* 점 좌표를 문자열로 표현</font> 
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">* @return 문자열 (x,y)</font>  
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">*/</font> 
+</pre>
+<pre id="codeP4b" class="unselectable codeClass">P4b		public String <font color='red' title="해당 객체를 문자열로 변환하는 메서드">toString</font>()					 
+</pre><pre id="code0" class="unselectable codeClass">		{ 
+</pre><pre id="code0" class="unselectable codeClass">			return "(" + <font color='red' title="객체 자신에 대한 레퍼런스">this</font>.x + "," + <font color='red' title="객체 자신에 대한 레퍼런스">this</font>.y + ")"; 
+</pre>
+<pre id="codeP4e" class="unselectable codeClass">P4e		} 
+</pre><pre id="code0" class="unselectable codeClass">	 
+</pre><pre id="code0" class="unselectable codeClass">		<font color="green">/** </font>
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">* 점과 다른 점의 거리를 계산</font> 
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">* @return 두 점 사이의 거리</font> 
+</pre><pre id="code0" class="unselectable codeClass">		 <font color="green">*/</font> 
+</pre>
+<pre id="codeP5b" class="unselectable codeClass">P5b		public double distanceTo( XYpoint that )					 
+</pre><pre id="code0" class="unselectable codeClass">		{ 
+</pre><pre id="code0" class="unselectable codeClass">			return <font color='red' title="수학과 관련된 다양한 메서드를 제공해주는 클래스">Math</font>.<font color='red' title="제곱근 결과를 반환하는 메서드">sqrt</font>( <font color='red' title="수학과 관련된 다양한 메서드를 제공해주는 클래스">Math</font>.<font color='red' title="밑수의 지수승을 반환하는 메서드">pow</font>( ( <font color='red' title="객체 자신에 대한 레퍼런스">this</font>.x - that.x ), 2 ) + <font color='red' title="수학과 관련된 다양한 메서드를 제공해주는 클래스">Math</font>.<font color='red' title="밑수의 지수승을 반환하는 메서드">pow</font>( ( <font color='red' title="객체 자신에 대한 레퍼런스">this</font>.y - that.y ), 2 ) ); 
+</pre>
+<pre id="codeP5e" class="unselectable codeClass">P5e		} 
+</pre><pre id="code0" class="unselectable codeClass">	} 
+</pre><pre id="code0" class="unselectable codeClass">		 
+</pre><pre id="code0" class="unselectable codeClass">	public class XYpoint_Main  
+</pre><pre id="code0" class="unselectable codeClass">	{ 
+</pre><pre id="code0" class="unselectable codeClass">		<font color="green">//<b> 프로그램시작 </b></font>
+</pre>
+<pre id="codeM1b" class="unselectable codeClass">M1b		public static void main( String[] args )  
+</pre><pre id="code0" class="unselectable codeClass">		{ 
+</pre><pre id="code0" class="unselectable codeClass">			<font color="green">//<b> 점의 좌표값 입력	</b></font>
+</pre><pre id="code0" class="unselectable codeClass">			int x = 0, y = 0; 
+</pre><pre id="code0" class="unselectable codeClass">			Scanner scan = new Scanner( System.in ); 
+</pre><pre id="code0" class="unselectable codeClass">			System.out.print( "점의 x좌표 값을 입력하세요 : " ); 
+</pre><pre id="code0" class="unselectable codeClass">			x = scan.nextInt(); 
+</pre><pre id="code0" class="unselectable codeClass">			System.out.print( "점의 y좌표 값을 입력하세요 : " ); 
+</pre><pre id="code0" class="unselectable codeClass">			y = scan.nextInt(); 
+</pre><pre id="code0" class="unselectable codeClass">	 
+</pre><pre id="code0" class="unselectable codeClass">			<font color="green">//<b> 좌표값을 바탕으로 원점과 입력점의 객체 초기화		</b></font>
+</pre>
+<pre id="codeM11" class="unselectable codeClass">M11			XYpoint origin =  
+</pre>
+<pre id="codeM12" class="unselectable codeClass">M12			               new XYpoint(); 
+</pre>
+<pre id="codeM13" class="unselectable codeClass">M13			XYpoint point =  
+</pre>
+<pre id="codeM14" class="unselectable codeClass">M14			               new XYpoint( x, y ); 
+</pre><pre id="code0" class="unselectable codeClass">	 
+</pre><pre id="code0" class="unselectable codeClass">			<font color="green">//<b> 원점과 입력한 점과 까지의 거리 계산	</b></font>
+</pre>
+<pre id="codeM15" class="unselectable codeClass">M15			if ( origin.<font color='red' title="해당 객체와 전달받은 객체가 같은지 판정하는 메서드">equals</font>( point ) ) 
+</pre><pre id="code0" class="unselectable codeClass">			{ 
+</pre><pre id="code0" class="unselectable codeClass">				System.out.println( "이 점은 원점입니다" ); 
+</pre><pre id="code0" class="unselectable codeClass">			} 
+</pre><pre id="code0" class="unselectable codeClass">			else 
+</pre><pre id="code0" class="unselectable codeClass">			{ 
+</pre>
+<pre id="codeM16" class="unselectable codeClass">M16				System.out.println(  
+</pre>
+<pre id="codeM17" class="unselectable codeClass">M17				                    origin + "과"  
+</pre>
+<pre id="codeM18" class="unselectable codeClass">M18				                     + point + "사이의 거리는 " 
+</pre>
+<pre id="codeM19" class="unselectable codeClass">M19				                     + point.distanceTo( origin ) + "입니다" ); 
+</pre><pre id="code0" class="unselectable codeClass">			} 
+</pre><pre id="code0" class="unselectable codeClass">	 
+</pre><pre id="code0" class="unselectable codeClass">		<font color="green">//<b> 프로그램 종료 </b></font>
+</pre>
+<pre id="codeM1e" class="unselectable codeClass">M1e		} 
+</pre><pre id="code0" class="unselectable codeClass">	} 
+</pre></div>	 	 				<br><h4>키워드 설명</h4> 				<pre id = "d3" style='white-space:normal;'></pre> 			 				<h4>실행 순서</h4> 				<pre id = "d4" style='white-space:normal; width:800px;'> </pre> 				<pre style='white-space:normal;'> 					※ 실행순서 및 메모리상태는 A키(이전)및 D키(다음)를 눌러도 확인할 수 있습니다  				</pre> 				<br><br> 			</div> 			<div id = "floatingBox"> 				<pre id = "outputBox" class ="outputBox"></pre>  				<div id = "intermediateResult"> 					<img id = "d7"> 					<table style = "border-spacing:0px;margin:0px;table-layout:auto;"> 						<tbody id = "d8"></tbody> 					</table> 				</div> 			</div> 		</div> 	</body> </html> 

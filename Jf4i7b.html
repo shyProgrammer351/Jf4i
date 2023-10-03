@@ -1,0 +1,128 @@
+<!DOCTYPE html> <html> 	<head> 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 		<script type="text/javascript" src="https://5awf1ssnauwzzo5wgvczig.on.drv.tw/Web/J/J0407.js"></script> 		<script type="text/javascript" src="../reading/functions.js"></script> 		<link rel="stylesheet" href="../reading/layout.css"> 		<script> 			const d10 = [ [ "interface" ], [ "class" ], [ "implements" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "class" ], [ "new" ], [ "new" ], 							]; 		</script> 	</head> 	<body onload='f1();' onkeydown='f4()' oncontextmenu="return false" onselectstart="return false" oncopy="return false" oncut="return false" onpaste="return false" draggable="false" ondragstart="return false" ondrop="return false"> 		<div id = "container"> 			<div id = "titleBox"> 			</div> 			<div id = "navigationBox"> 			</div>  			<div id = "contentBox"> 				<h4>문제</h4> 				<pre style='white-space:normal;'>로봇청소기 리모컨의 입력(전원, 상, 하, 좌, 우)에 따라 로봇청소기를 제어하는 문제입니다 이를 해결하는 다음 프로그램에 대해 빈칸을 채우세요 </pre> 				<pre class='selectable'>로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>전원</font></b>
+전원을 켭니다
+로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>상</font></b>
+직진합니다
+로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>하</font></b>
+후진합니다
+로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>좌</font></b>
+좌회전합니다
+로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>우</font></b>
+우회전합니다
+로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 :<b><font color='red'> 종료</font></b>
+</pre><br><pre class='selectable'>로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>전원</font></b>
+전원을 켭니다
+로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>전원</font></b>
+전원을 끕니다
+로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 :<b><font color='red'> 종료</font></b>
+</pre><br><pre class='selectable'>로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>상</font></b>
+직진합니다
+로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>상</font></b>
+직진합니다
+로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>상</font></b>
+직진합니다
+로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 :<b><font color='red'> 종료</font></b>
+</pre><br>  	  				<h4>코드 빈칸 채우기</h4> 				<pre style='white-space:pre;border:1px'>package remoteControl; 
+ 
+public <input id='blank0' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(0)'> RemoteControl 
+{ 
+	public final boolean ON = true; 
+	public final boolean OFF = false;	 
+	public String clickPower(); 
+	public String clickUp(); 
+	public String clickDown(); 
+	public String clickLeft(); 
+	public String clickRight(); 
+} 
+package remoteControl; 
+ 
+public <input id='blank1' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(1)'> RoboticVacuumCleaner <input id='blank2' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(2)'> RemoteControl  
+{				 
+	private boolean power;						 
+	 
+	public RoboticVacuumCleaner()									 
+	{ 
+		<input id='blank3' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(3)'>.power = OFF;						 
+	} 
+	 
+	public String clickPower()					 
+	{ 
+		if( <input id='blank4' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(4)'>.power == OFF )					 
+		{ 
+			<input id='blank5' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(5)'>.power = ON;					 
+			return "전원을 켭니다"; 
+		} 
+		else  
+		{ 
+			<input id='blank6' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(6)'>.power = OFF;					 
+			return "전원을 끕니다"; 
+		} 
+	} 
+	 
+	public String clickUp()						 
+	{ 
+		return "직진합니다";	  
+	} 
+	 
+	public String clickDown()					 
+	{ 
+		return "후진합니다";	  
+	} 
+	 
+	public String clickLeft()					 
+	{ 
+		return "좌회전합니다"; 
+	} 
+	 
+	public String clickRight()					 
+	{ 
+		return "우회전합니다"; 
+	} 
+} 
+import java.util.Scanner; 
+import remoteControl.RoboticVacuumCleaner; 
+public <input id='blank7' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(7)'> VacuumCleaner_Main 								 
+{ 
+	public static void main( String[] args ) 	 
+	{ 
+		Scanner scan = <input id='blank8' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(8)'> Scanner( System.in ); 
+		String result = ""; 
+		 
+		RoboticVacuumCleaner cleaner =  
+		              <input id='blank9' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(9)'> RoboticVacuumCleaner();				 
+ 
+		do 
+		{ 
+			System.out.print( "로봇청소기 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : "); 
+			result = scan.next(); 
+			 
+			if ( result.equals( "전원" ) ) 
+			{ 
+				System.out.println( 
+				                    cleaner.clickPower() ); 
+			} 
+			else if ( result.equals( "상" ) ) 
+			{ 
+				System.out.println( 
+				                    cleaner.clickUp() ); 
+			} 
+			else if ( result.equals( "하" ) ) 
+			{ 
+				System.out.println( 
+				                    cleaner.clickDown() ); 
+			} 
+			else if ( result.equals( "좌" ) ) 
+			{ 
+				System.out.println( 
+				                    cleaner.clickLeft() ); 
+			} 
+			else if ( result.equals( "우" ) ) 
+			{ 
+				System.out.println( 
+				                    cleaner.clickRight() ); 
+			}				 
+ 
+		} while( !result.equals( "종료" ) ); 
+						 
+		return;		 
+	} 
+} 	 			</pre> 			</div> 		</div> 	</body> </html> 

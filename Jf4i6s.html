@@ -1,0 +1,127 @@
+<!DOCTYPE html> <html> 	<head> 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 		<script type="text/javascript" src="https://5awf1ssnauwzzo5wgvczig.on.drv.tw/Web/J/J0406.js"></script> 		<script type="text/javascript" src="../reading/functions.js"></script> 		<link rel="stylesheet" href="../reading/layout.css"> 		<script> 			var d10 = "13 15 1 2 14 16 17 18 19 21 3 4 20 34 16 17 18 19 22 24 5 6 23 34 16 17 18 19 22 25 27 7 8 26 34 16 17 18 19 22 25 28 30 9 10 29 34 16 17 18 19 22 25 28 31 33 11 12 32 34 16 17 18 19 22 25 28 31 34 35"; 		</script> 	</head> 	<body onload='f1();' onkeydown='f4()' oncontextmenu="return false" oncut="return false" onpaste="return false" draggable="false" ondragstart="return false" ondrop="return false"> 		<div id = "container"> 			<div id = "titleBox"> 			</div> 			<div id = "navigationBox"> 			</div>  			<div id = "contentBox"> 				<h4>문제</h4> 				<pre style='white-space:normal;'>에어컨 리모컨의 입력(전원, 상, 하, 좌, 우)에 따라 에어컨을 제어하는 문제입니다 실행순서를 클릭하세요 </pre> 				<pre class='selectable'>에어컨 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>전원</font></b>
+전원을 켭니다
+에어컨 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>상</font></b>
+현재 온도는 19도입니다
+에어컨 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>하</font></b>
+현재 온도는 18도입니다
+에어컨 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>좌</font></b>
+현재 풍량은 9입니다
+에어컨 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>우</font></b>
+현재 풍량은 10입니다
+에어컨 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 :<b><font color='red'> 종료</font></b>
+</pre><br>  	 				<h4>프로그램 코드</h4> 				<pre></pre><pre id="code0" class="unselectable codeClass">	package remoteControl;
+
+</pre><pre id="code0" class="unselectable codeClass">	public interface RemoteControl
+</pre><pre id="code0" class="unselectable codeClass">	{
+</pre><pre id="code0" class="unselectable codeClass">		public final boolean ON = true;
+</pre><pre id="code0" class="unselectable codeClass">		public final boolean OFF = false;	
+</pre><pre id="code0" class="unselectable codeClass">		public String clickPower();
+</pre><pre id="code0" class="unselectable codeClass">		public String clickUp();
+</pre><pre id="code0" class="unselectable codeClass">		public String clickDown();
+</pre><pre id="code0" class="unselectable codeClass">		public String clickLeft();
+</pre><pre id="code0" class="unselectable codeClass">		public String clickRight();
+</pre><pre id="code0" class="unselectable codeClass">	}
+
+</pre><pre id="code0" class="unselectable codeClass">	package remoteControl;
+
+</pre><pre id="code0" class="unselectable codeClass">	public class AirConditioner implements RemoteControl 
+
+</pre><pre id="code0" class="unselectable codeClass">	{				
+</pre><pre id="code0" class="unselectable codeClass">		private boolean power;						
+</pre><pre id="code0" class="unselectable codeClass">		private int temperature;						
+</pre><pre id="code0" class="unselectable codeClass">		private int windStrength;							
+</pre><pre id="code0" class="unselectable codeClass">		
+</pre><pre id="code1" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('1')">1		public AirConditioner()									
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code0" class="unselectable codeClass">			this.power = OFF;						
+</pre><pre id="code0" class="unselectable codeClass">			this.temperature = 18;						
+</pre><pre id="code2" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('2')">2			this.windStrength = 10;						
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">		
+</pre><pre id="code3" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('3')">3		public String clickPower()					
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code0" class="unselectable codeClass">			if( this.power == OFF )					
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				this.power = ON;					
+</pre><pre id="code0" class="unselectable codeClass">				return "전원을 켭니다";
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code0" class="unselectable codeClass">			else 
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code0" class="unselectable codeClass">				this.power = OFF;					
+</pre><pre id="code0" class="unselectable codeClass">				return "전원을 끕니다";
+</pre><pre id="code0" class="unselectable codeClass">			}
+</pre><pre id="code4" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('4')">4		}
+</pre><pre id="code0" class="unselectable codeClass">		
+</pre><pre id="code5" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('5')">5		public String clickUp()						
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code6" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('6')">6			return "현재 온도는 " + ( ++this.temperature ) + "도입니다";		
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">		
+</pre><pre id="code7" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('7')">7		public String clickDown()					
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code8" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('8')">8			return "현재 온도는 " + ( --this.temperature ) + "도입니다";		
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">		
+</pre><pre id="code9" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('9')">9		public String clickLeft()					
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code10" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('10')">10			return "현재 풍량은 " + ( --this.windStrength ) + "입니다";		
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">		
+</pre><pre id="code11" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('11')">11		public String clickRight()					
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code12" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('12')">12			return "현재 풍량은 " + ( ++this.windStrength ) + "입니다";		
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">	}
+
+</pre><pre id="code0" class="unselectable codeClass">
+</pre><pre id="code0" class="unselectable codeClass">	import java.util.Scanner;
+</pre><pre id="code0" class="unselectable codeClass">	import remoteControl.AirConditioner;
+
+</pre><pre id="code0" class="unselectable codeClass">	public class AirConditioner_Main 								
+</pre><pre id="code0" class="unselectable codeClass">	{
+</pre><pre id="code13" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('13')">13		public static void main( String[] args ) 	
+</pre><pre id="code0" class="unselectable codeClass">		{
+</pre><pre id="code0" class="unselectable codeClass">			Scanner scan = new Scanner( System.in );
+</pre><pre id="code0" class="unselectable codeClass">			String result = "";
+</pre><pre id="code0" class="unselectable codeClass">			
+</pre><pre id="code14" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('14')">14			AirConditioner aircon = 
+</pre><pre id="code15" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('15')">15			                        new AirConditioner();		
+
+</pre><pre id="code16" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('16')">16			do
+</pre><pre id="code0" class="unselectable codeClass">			{
+</pre><pre id="code17" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('17')">17				System.out.print( "에어컨 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : ");
+</pre><pre id="code18" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('18')">18				result = scan.next();
+</pre><pre id="code0" class="unselectable codeClass">				
+</pre><pre id="code19" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('19')">19				if ( result.equals( "전원" ) )
+</pre><pre id="code0" class="unselectable codeClass">				{
+</pre><pre id="code20" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('20')">20					System.out.println(
+</pre><pre id="code21" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('21')">21					                    aircon.clickPower() );
+</pre><pre id="code0" class="unselectable codeClass">				}
+</pre><pre id="code22" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('22')">22				else if ( result.equals( "상" ) )
+</pre><pre id="code0" class="unselectable codeClass">				{
+</pre><pre id="code23" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('23')">23					System.out.println(
+</pre><pre id="code24" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('24')">24					                    aircon.clickUp() );
+</pre><pre id="code0" class="unselectable codeClass">				}
+</pre><pre id="code25" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('25')">25				else if ( result.equals( "하" ) )
+</pre><pre id="code0" class="unselectable codeClass">				{
+</pre><pre id="code26" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('26')">26					System.out.println(
+</pre><pre id="code27" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('27')">27					                    aircon.clickDown() );
+</pre><pre id="code0" class="unselectable codeClass">				}
+</pre><pre id="code28" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('28')">28				else if ( result.equals( "좌" ) )
+</pre><pre id="code0" class="unselectable codeClass">				{
+</pre><pre id="code29" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('29')">29					System.out.println(
+</pre><pre id="code30" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('30')">30					                    aircon.clickLeft() );
+</pre><pre id="code0" class="unselectable codeClass">				}
+</pre><pre id="code31" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('31')">31				else if ( result.equals( "우" ) )
+</pre><pre id="code0" class="unselectable codeClass">				{
+</pre><pre id="code32" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('32')">32					System.out.println(
+</pre><pre id="code33" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('33')">33					                    aircon.clickRight() );
+</pre><pre id="code0" class="unselectable codeClass">				}				
+
+</pre><pre id="code34" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('34')">34			} while( !result.equals( "종료" ) );
+</pre><pre id="code0" class="unselectable codeClass">							
+</pre><pre id="code35" class="unselectable codeClass" onmouseover="f8(this.id, true) " onmouseout="f8(this.id, false)" onclick="f7('35')">35			return;		
+</pre><pre id="code0" class="unselectable codeClass">		}
+</pre><pre id="code0" class="unselectable codeClass">	}
+</pre>
+</pre> 			</div> 			<div id = "floatingBox"> 				<b>실행 순서</b> 				<pre id = "d4" style='white-space:normal; word-wrap:break-word; width:150px;'></pre> 			</div> 		</div> 	</body> </html>   
