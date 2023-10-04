@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html> 	<head> 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 		<script type="text/javascript" src="https://5awf1ssnauwzzo5wgvczig.on.drv.tw/Web/J/J0405.js"></script> 		<script type="text/javascript" src="../reading/functions.js"></script> 		<link rel="stylesheet" href="../reading/layout.css"> 		<script> 			const d10 = [ [ "interface" ], [ "class" ], [ "implements" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "class" ], [ "new" ], [ "new" ], 							]; 		</script> 	</head> 	<body onload='f1();' onkeydown='f4()' oncontextmenu="return false" onselectstart="return false" oncopy="return false" oncut="return false" onpaste="return false" draggable="false" ondragstart="return false" ondrop="return false"> 		<div id = "container"> 			<div id = "titleBox"> 			</div> 			<div id = "navigationBox"> 			</div>  			<div id = "contentBox"> 				<h4>문제</h4> 				<pre style='white-space:normal;'>TV 리모컨의 입력(전원, 상, 하, 좌, 우)에 따라 TV를 제어하는 문제입니다 이를 해결하는 다음 프로그램에 대해 빈칸을 채우세요 </pre> 				<pre class='selectable'>Main
+<!DOCTYPE html> <html> 	<head> 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 		<script type="text/javascript" src="https://5awf1ssnauwzzo5wgvczig.on.drv.tw/Web/J/J0405.js"></script> 		<script type="text/javascript" src="../reading/functions.js"></script> 		<link rel="stylesheet" href="../reading/layout.css"> 		<script> 			const d10 = [ [ "package" ], [ "interface" ], [ "package" ], [ "import" ], [ "class" ], [ "implements" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "this" ], [ "import" ], [ "import" ], [ "class" ], [ "new" ], [ "new" ], 							]; 		</script> 	</head> 	<body onload='f1();' onkeydown='f4()' oncontextmenu="return false" onselectstart="return false" oncopy="return false" oncut="return false" onpaste="return false" draggable="false" ondragstart="return false" ondrop="return false"> 		<div id = "container"> 			<div id = "titleBox"> 			</div> 			<div id = "navigationBox"> 			</div>  			<div id = "contentBox"> 				<h4>문제</h4> 				<pre style='white-space:normal;'>TV 리모컨의 입력(전원, 상, 하, 좌, 우)에 따라 TV를 제어하는 문제입니다 이를 해결하는 다음 프로그램에 대해 빈칸을 채우세요 </pre> 				<pre class='selectable'>Main
 TV 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>전원</font></b>
 전원을 켭니다
 TV 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>상</font></b>
@@ -22,9 +22,9 @@ TV 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요
 TV 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 : <b><font color='red'>상</font></b>
 현재 채널은 103번입니다
 TV 리모컨의 상, 하, 좌, 우, 전원, 종료 중 하나를 입력하세요 :<b><font color='red'>종료</font></b>
-</pre><br>  	  				<h4>코드 빈칸 채우기</h4> 				<pre style='white-space:pre;border:1px'>package remoteControl; 
+</pre><br>  	  				<h4>코드 빈칸 채우기</h4> 				<pre style='white-space:pre;border:1px'><input id='blank0' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(0)'> remoteControl; 
  
-public <input id='blank0' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(0)'> RemoteControl 
+public <input id='blank1' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(1)'> RemoteControl 
 { 
 	public final boolean ON = true; 
 	public final boolean OFF = false;	 
@@ -34,10 +34,10 @@ public <input id='blank0' type='text' required minlength='1' maxlength='30' size
 	public String clickLeft(); 
 	public String clickRight(); 
 } 
-package remoteControl; 
-import java.util.Scanner; 
+<input id='blank2' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(2)'> remoteControl; 
+<input id='blank3' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(3)'> java.util.Scanner; 
  
-public <input id='blank1' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(1)'> TV <input id='blank2' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(2)'> RemoteControl  
+public <input id='blank4' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(4)'> TV <input id='blank5' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(5)'> RemoteControl  
 {				 
 	private boolean power;	  
 	private int channel;  
@@ -45,56 +45,56 @@ public <input id='blank1' type='text' required minlength='1' maxlength='30' size
 	 
 	public TV()					  
 	{ 
-		<input id='blank3' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(3)'>.power = OFF;		  
-		<input id='blank4' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(4)'>.channel = 100;  
-		<input id='blank5' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(5)'>.volume = 10;		  
+		<input id='blank6' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(6)'>.power = OFF;		  
+		<input id='blank7' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(7)'>.channel = 100;  
+		<input id='blank8' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(8)'>.volume = 10;		  
 	} 
 	 
 	public String clickPower()	  
 	{ 
-		if( <input id='blank6' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(6)'>.power == OFF )	  
+		if( <input id='blank9' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(9)'>.power == OFF )	  
 		{ 
-			<input id='blank7' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(7)'>.power = ON;		  
+			<input id='blank10' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(10)'>.power = ON;		  
 			return "전원을 켭니다"; 
 		} 
 		else  
 		{ 
-			<input id='blank8' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(8)'>.power = OFF;		  
+			<input id='blank11' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(11)'>.power = OFF;		  
 			return "전원을 끕니다"; 
 		} 
 	} 
 	 
 	public String clickUp()		  
 	{ 
-		return "현재 채널은 " + ( ++<input id='blank9' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(9)'>.channel ) + "번입니다";		  
+		return "현재 채널은 " + ( ++<input id='blank12' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(12)'>.channel ) + "번입니다";		  
 	} 
 	 
 	public String clickDown()				  
 	{ 
-		return "현재 채널은 " + ( --<input id='blank10' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(10)'>.channel ) + "번입니다";		  
+		return "현재 채널은 " + ( --<input id='blank13' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(13)'>.channel ) + "번입니다";		  
 	} 
 	 
 	public String clickLeft()			  
 	{ 
-		return "현재 음량은 " + ( --<input id='blank11' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(11)'>.volume ) + "입니다";		  
+		return "현재 음량은 " + ( --<input id='blank14' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(14)'>.volume ) + "입니다";		  
 	} 
 	 
 	public String clickRight()		  
 	{ 
-		return "현재 음량은 " + ( ++<input id='blank12' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(12)'>.volume ) + "입니다";		  
+		return "현재 음량은 " + ( ++<input id='blank15' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(15)'>.volume ) + "입니다";		  
 	} 
 } 
-import java.util.Scanner; 
-import remoteControl.TV; 
-public <input id='blank13' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(13)'> TV_Main 							  
+<input id='blank16' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(16)'> java.util.Scanner; 
+<input id='blank17' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(17)'> remoteControl.TV; 
+public <input id='blank18' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(18)'> TV_Main 							  
 { 
 	public static void main( String[] args ) 	  
 	{ 
-		Scanner scan = <input id='blank14' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(14)'> Scanner( System.in ); 
+		Scanner scan = <input id='blank19' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(19)'> Scanner( System.in ); 
 		String result = ""; 
 		 
 		TV tv =  
-		        <input id='blank15' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(15)'> TV();						  
+		        <input id='blank20' type='text' required minlength='1' maxlength='30' size='10' onchange='f6(20)'> TV();						  
  
 		do 
 		{ 
